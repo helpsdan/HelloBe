@@ -161,7 +161,7 @@
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-1n-AMm">
                                 <rect key="frame" x="96" y="340" width="78" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="smartphone"/>
+                                <state key="normal" title="Button" image="bag"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -286,6 +286,7 @@
     </scenes>
     <resources>
         <image name="Logo_HelloBe" width="1920" height="1080"/>
+        <image name="bag" width="512" height="512"/>
         <image name="base" width="96" height="96"/>
         <image name="beer" width="512" height="512"/>
         <image name="chat" width="36" height="36"/>
@@ -300,7 +301,6 @@
         <image name="profile" width="36" height="36"/>
         <image name="restaurant" width="512" height="512"/>
         <image name="settings" width="36" height="36"/>
-        <image name="smartphone" width="512" height="512"/>
         <image name="smoking" width="512" height="512"/>
     </resources>
 </document>
