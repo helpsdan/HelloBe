@@ -21,170 +21,138 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //Mostrar localizacao do usuario
+        //Mostrar a localizacao do usuario
         mapView.showsUserLocation = true
-        
         
         //Rastrear a localizacao do usuario
         mapView.userTrackingMode = .follow
         
-        
-        //Definindo a delegate
+        // Definindo o delegate do mapview
         mapView.delegate = self
         
         
-        
-        //Definindo o delegate
-        
+        //Define a delegate (classe que responde) da SearchBar
         searchBar.delegate = self
         
         
         requestAuthorization()
         
-        // Do any additional setup after loading the view.
     }
 
 
     
     //Solicitando autorizacao do usuario para o uso da sua localizacao
     func requestAuthorization(){
-        //definando a precissao da localizacao
+        
+        // defininco a precisao da localizacao do usuario
         locationManage.desiredAccuracy = kCLLocationAccuracyBest
         
-        //solicitando a autorizacao para o uso da localizacao ate mesmo quando o usuario sair da aplicacao
-        locationManage.requestAlwaysAuthorization()
-        
+        // solicitando autorizacao para uso da localizacao com o app em uso
+        locationManage.requestWhenInUseAuthorization()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 
 extension MapViewController: UISearchBarDelegate{
-    
-    //Implementando metodo disparado pelo botao search da searchBar
+    //Implementando método disparado pelo botao search da search bar
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //Retirando foco da SearchBar(Escondendo o teclado)
+        
+        // retirando o foco da searchBar (Esconder o teclado)
         searchBar.resignFirstResponder()
         
-        
-        //Criando objeto que configura uma pesquisa de pontos  de interrese
+        // Criando objeto que configura uma pesquisa de pontos de interese
         let request = MKLocalSearchRequest()
         
-        
-        //Configurando a regiao do mapa onde a pesquisa sera feita
+        // Configurando a região do mapa onde a pesquisa sera feita
         request.region = mapView.region
         
-        //Definindo o que sera pesquisado
-        
+        // Definindo o que sera buscado
         request.naturalLanguageQuery = searchBar.text
         
-        
+        // criando objeto que realiza a pesquisa
         let search = MKLocalSearch(request: request)
         
-        
-        //Realizar a pesquisa
-        
+        // realizando a pesquisa
         search.start { (response, error) in
-            if error == nil{//nao teve erro
+            if error == nil { //Não teve erro na pesquisa
                 guard let response = response else {return}
                 
-                
-                //Remover as annotation previamente adicionadas
+                // remover as anotations previamente adicionadas
                 self.mapView.removeAnnotations(self.mapView.annotations)
                 
-                
-                //Varrer todos os pontos de interesse da pesquisa
+                // varrer todos os pontos de interesse trazidos pela pesquisa
                 for item in response.mapItems{
-                    //Criando uma annotation
+                    // criando uma annotation
                     let annotation = MKPointAnnotation()
                     
-                    //Definir a Lat e Long da annotation
+                    //definindo a latitude e a longitude da annotation
                     annotation.coordinate = item.placemark.coordinate
                     
-                    //Definir titulo e sub-titulo da annotation
+                    // definindo um titulo e subtitulo da annotation
                     annotation.title = item.name
                     annotation.subtitle = item.url?.absoluteString
                     
-                    //Adicionando annotation no mapa
+                    // Adicionar annotation no mapa
                     self.mapView.addAnnotation(annotation)
-                    
-                    
-                    
                 }
-                
-                
             }
         }
-        
     }
 }
-
 extension MapViewController : MKMapViewDelegate{
     
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) ->
         MKOverlayRenderer {
-        
-            if overlay is MKPolyline{
+            if overlay is MKPolyline {
                 let renderer = MKPolylineRenderer(overlay: overlay)
                 
-                renderer.lineWidth = 7.0
-                renderer.strokeColor = .green
-                
+                renderer.lineWidth = 3.0
+                renderer.strokeColor = .blue
                 
                 return renderer
-                
-            }else {
-                return MKOverlayRenderer(overlay: overlay)
-            }
-            
+            }else{return MKOverlayRenderer(overlay: overlay)}
     }
     
-    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
-        //Criando um objeto de configuracao da requisicao de rota
+        // Criando um objeto de configuracao da requisicao de rota
         let request = MKDirectionsRequest()
         
-        //Configurar origem e destino da rota
-        //origem
+        // configura a origem e o destino da rota
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: mapView.userLocation.coordinate))
-        //destino
-        request.source = MKMapItem(placemark: MKPlacemark(coordinate: view.annotation!.coordinate))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: view.annotation!.coordinate))
         
-        
-        //Criando o objeto que calcula a rota
+        // criando objeto que realiza o calculo da rota
         let directions = MKDirections(request: request)
         
-        //Calcular a rota
+        // Calcular a rota
         directions.calculate { (response, error) in
-            if error == nil{
+            if error == nil{//nao deu erro
                 guard let response = response else {return}
                 
-                //Recuperando a rota
+                //recuperando a rota
                 guard let route = response.routes.first else {return}
                 
-                //Apagando rotas anteriores
+                // Nome da rota
+                print(route.name)
+                
+                // Distancia da rota
+                print(route.distance)
+                
+                //Passo a passo da rota
+                for step in route.steps{
+                    print(step.distance)
+                }
+                
+                
+                //apagar as rotas anteriores
                 self.mapView.removeOverlays(self.mapView.overlays)
                 
-                //Adicionando a rota
+                // adicionar a rota no mapa
                 self.mapView.add(route.polyline, level: .aboveRoads)
             }
         }
-        
-        
     }
 }
 
