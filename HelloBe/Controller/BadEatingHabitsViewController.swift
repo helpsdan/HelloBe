@@ -16,20 +16,20 @@ class BadEatingHabitsViewController: UIViewController {
     @IBOutlet weak var swTime: UISwitch!
     @IBOutlet weak var swFuits: UISwitch!
     @IBOutlet weak var swNutri: UISwitch!
-    
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     @IBAction func btSend(_ sender: UIButton){
-        
+        dismiss(animated: true, completion: nil)
     }
     
     func save(){
         
     }
 
+    
     
     @IBAction func close(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

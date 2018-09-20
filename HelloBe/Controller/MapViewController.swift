@@ -15,9 +15,10 @@ class MapViewController: UIViewController {
         case message(String)
     }
     
+    var place: Place!
     @IBOutlet weak var mapView: MKMapView!
     var num: Int = 0
-    let locations = ["Cinema",
+    let locations = ["Rua João Guilherme",
                      "Café",
                      "Parque",
                      "Restaurante",
@@ -35,19 +36,35 @@ class MapViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let local = locations[num]
         let geoCoder = CLGeocoder()
+        
+        for local in locations{
+            addAnnotation(local)
+        }
+        
         geoCoder.geocodeAddressString(local) { (placemarks, error) in
-            guard let placemark = placemarks?.first else { return }
-            let latitude = placemark.location?.coordinate.latitude
-            let longitude = placemark.location?.coordinate.longitude
-            
+            if error == nil{
+                if self.savePlace(with: placemarks?.first){
+                    print("ok")
+                } else {
+                    print("erro")
+                }
+            }
         }
         showMessage(type: .message(local))
     }
     func savePlace(with placemark: CLPlacemark?) -> Bool{
         guard let placemark = placemark, let coordinate = placemark.location?.coordinate else { return false }
+        place = Place(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, 3500, 3500)
+        mapView.setRegion(region, animated: true)
         return true
     }
     
+    func addAnnotation(_ place: String){
+        let annotation = MKPointAnnotation()
+        annotation.title = place
+        mapView.addAnnotation(annotation)
+    }
     
     override func viewDidDisappear(_ animated: Bool) {
         if num == 0{
@@ -72,7 +89,7 @@ class MapViewController: UIViewController {
         switch type {
             case .message(let name):
                 title = "Selecionamos um local para você!"
-                message = "Toque no local desejado e siga sua rota para ir ao \(name)."
+                message = "Toque no local desejado e siga sua rota para chegar lá."
         }
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Prosseguir", style: .cancel, handler: nil)
