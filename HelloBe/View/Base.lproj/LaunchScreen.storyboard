@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_HelloBe" translatesAutoresizingMaskIntoConstraints="NO" id="FGr-qt-Yte">
-                                <rect key="frame" x="-161" y="102" width="696" height="439"/>
+                                <rect key="frame" x="0.0" y="201" width="375" height="265"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="376"/>
+            <point key="canvasLocation" x="704.79999999999995" y="375.56221889055473"/>
         </scene>
     </scenes>
     <resources>
