@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37A661A521535D820087CE3F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A661A421535D820087CE3F /* MapViewController.swift */; };
 		37F591E1214AE78600DA0886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F591E0214AE78600DA0886 /* AppDelegate.swift */; };
 		37F591E6214AE78600DA0886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F591E4214AE78600DA0886 /* Main.storyboard */; };
 		37F591E9214AE78600DA0886 /* HelloBe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37F591E7214AE78600DA0886 /* HelloBe.xcdatamodeld */; };
 		37F591EB214AE78A00DA0886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F591EA214AE78A00DA0886 /* Assets.xcassets */; };
 		37F591EE214AE78A00DA0886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F591EC214AE78A00DA0886 /* LaunchScreen.storyboard */; };
 		37F591F8214AF92B00DA0886 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F591F7214AF92B00DA0886 /* LoginViewController.swift */; };
-		AC32CCA3214C6E31009DCD00 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32CCA2214C6E31009DCD00 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37A661A421535D820087CE3F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		37F591DD214AE78600DA0886 /* HelloBe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloBe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F591E0214AE78600DA0886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37F591E5214AE78600DA0886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		37F591ED214AE78A00DA0886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37F591EF214AE78A00DA0886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37F591F7214AF92B00DA0886 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AC32CCA2214C6E31009DCD00 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +39,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37A661A821535FDF0087CE3F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37F591F7214AF92B00DA0886 /* LoginViewController.swift */,
+				37A661A421535D820087CE3F /* MapViewController.swift */,
+				37F591E0214AE78600DA0886 /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		37A661A921535FF60087CE3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37F591EC214AE78A00DA0886 /* LaunchScreen.storyboard */,
+				37F591E4214AE78600DA0886 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		37A661AB215360040087CE3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37A661AC215360190087CE3F /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				37F591E7214AE78600DA0886 /* HelloBe.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		37F591D4214AE78600DA0886 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +92,12 @@
 		37F591DF214AE78600DA0886 /* HelloBe */ = {
 			isa = PBXGroup;
 			children = (
-				37F591E0214AE78600DA0886 /* AppDelegate.swift */,
-				37F591E4214AE78600DA0886 /* Main.storyboard */,
-				AC32CCA2214C6E31009DCD00 /* MapViewController.swift */,
+				37A661AC215360190087CE3F /* Database */,
+				37A661AB215360040087CE3F /* Model */,
+				37A661A921535FF60087CE3F /* View */,
+				37A661A821535FDF0087CE3F /* Controller */,
 				37F591EA214AE78A00DA0886 /* Assets.xcassets */,
-				37F591EC214AE78A00DA0886 /* LaunchScreen.storyboard */,
 				37F591EF214AE78A00DA0886 /* Info.plist */,
-				37F591E7214AE78600DA0886 /* HelloBe.xcdatamodeld */,
-				37F591F7214AF92B00DA0886 /* LoginViewController.swift */,
 			);
 			path = HelloBe;
 			sourceTree = "<group>";
@@ -144,7 +176,7 @@
 				37F591F8214AF92B00DA0886 /* LoginViewController.swift in Sources */,
 				37F591E9214AE78600DA0886 /* HelloBe.xcdatamodeld in Sources */,
 				37F591E1214AE78600DA0886 /* AppDelegate.swift in Sources */,
-				AC32CCA3214C6E31009DCD00 /* MapViewController.swift in Sources */,
+				37A661A521535D820087CE3F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 298D7RWDF2;
 				INFOPLIST_FILE = HelloBe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 298D7RWDF2;
 				INFOPLIST_FILE = HelloBe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
