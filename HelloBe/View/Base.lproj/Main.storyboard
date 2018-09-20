@@ -210,7 +210,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hF6-Ur-h42">
-                                <rect key="frame" x="20" y="40" width="335" height="607"/>
+                                <rect key="frame" x="20" y="140" width="335" height="457"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bad Eating Habits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkN-BZ-mpO">
                                         <rect key="frame" x="0.0" y="52" width="335" height="26"/>
@@ -304,7 +304,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-YZ-M5i">
-                                        <rect key="frame" x="75" y="465" width="185" height="30"/>
+                                        <rect key="frame" x="75" y="402" width="185" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.6653265357" green="0.81757205720000004" blue="0.99632793659999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
@@ -325,7 +325,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxN-6q-059">
-                                <rect key="frame" x="340" y="25" width="30" height="30"/>
+                                <rect key="frame" x="340" y="125" width="30" height="30"/>
                                 <state key="normal" image="cancel"/>
                                 <connections>
                                     <action selector="close:" destination="WtW-q5-Vb9" eventType="touchUpInside" id="NZj-rK-1eb"/>
@@ -335,10 +335,10 @@
                         <color key="backgroundColor" red="0.38431372549019605" green="0.69984614850000004" blue="0.83694773909999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dxN-6q-059" firstAttribute="trailing" secondItem="hF6-Ur-h42" secondAttribute="trailing" constant="15" id="5Ke-sW-e8S"/>
-                            <constraint firstItem="hF6-Ur-h42" firstAttribute="top" secondItem="gdf-qb-Xrd" secondAttribute="top" constant="20" id="Bxf-c7-lmI"/>
+                            <constraint firstItem="hF6-Ur-h42" firstAttribute="top" secondItem="gdf-qb-Xrd" secondAttribute="top" constant="120" id="Bxf-c7-lmI"/>
                             <constraint firstItem="hF6-Ur-h42" firstAttribute="leading" secondItem="gdf-qb-Xrd" secondAttribute="leading" constant="20" id="H61-m4-OfS"/>
                             <constraint firstItem="dxN-6q-059" firstAttribute="top" secondItem="hF6-Ur-h42" secondAttribute="top" constant="-15" id="Jzk-e2-wa7"/>
-                            <constraint firstItem="gdf-qb-Xrd" firstAttribute="bottom" secondItem="hF6-Ur-h42" secondAttribute="bottom" constant="20" id="Nyk-zb-uAX"/>
+                            <constraint firstItem="gdf-qb-Xrd" firstAttribute="bottom" secondItem="hF6-Ur-h42" secondAttribute="bottom" constant="70" id="Nyk-zb-uAX"/>
                             <constraint firstItem="gdf-qb-Xrd" firstAttribute="trailing" secondItem="hF6-Ur-h42" secondAttribute="trailing" constant="20" id="tmN-jm-y3S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gdf-qb-Xrd"/>
@@ -381,7 +381,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Location" id="zS1-fl-Nwh"/>
                     <connections>
-                        <outlet property="mapView" destination="Uee-5R-daQ" id="na8-td-e5C"/>
+                        <outlet property="mapView" destination="Uee-5R-daQ" id="MRf-Gd-tTa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bE7-mt-3iL" userLabel="First Responder" sceneMemberID="firstResponder"/>

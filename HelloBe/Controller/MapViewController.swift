@@ -18,52 +18,41 @@ class MapViewController: UIViewController {
     var place: Place!
     @IBOutlet weak var mapView: MKMapView!
     var num: Int = 0
-    let locations = ["Rua João Guilherme",
-                     "Café",
-                     "Parque",
-                     "Restaurante",
-                     "Praça",
+    let locations = ["MASP",
+                     "Shopping Pátio Paulista",
+                     "Shopping Eldorado",
                      "Livraria",
-                     "Shopping"]
+                     "Sorveteria",
+                     "Shopping",
+                     "Restaurante"]
     var locationManage = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         requestAuthorization()
         
+        self.mapView.showsUserLocation = true
+        self.mapView.userTrackingMode = .follow
         // Do any additional setup after loading the view.
     }
    
     override func viewDidAppear(_ animated: Bool) {
         let local = locations[num]
         let geoCoder = CLGeocoder()
-        
-        for local in locations{
-            addAnnotation(local)
-        }
+        let request = MKLocalSearchRequest()
+        request.region = self.mapView.region
         
         geoCoder.geocodeAddressString(local) { (placemarks, error) in
-            if error == nil{
-                if self.savePlace(with: placemarks?.first){
-                    print("ok")
-                } else {
-                    print("erro")
-                }
-            }
+            guard let placemark = placemarks?.first, let coordinate = placemark.location?.coordinate else { return }
+            self.place = Place(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            let region = MKCoordinateRegionMakeWithDistance(coordinate, 300, 300)
+            self.mapView.setRegion(region, animated: true)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = self.place.coordinate
+            self.mapView.addAnnotation(annotation)
         }
         showMessage(type: .message(local))
-    }
-    func savePlace(with placemark: CLPlacemark?) -> Bool{
-        guard let placemark = placemark, let coordinate = placemark.location?.coordinate else { return false }
-        place = Place(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        let region = MKCoordinateRegionMakeWithDistance(coordinate, 3500, 3500)
-        mapView.setRegion(region, animated: true)
-        return true
-    }
-    
-    func addAnnotation(_ place: String){
-        let annotation = MKPointAnnotation()
-        annotation.title = place
-        mapView.addAnnotation(annotation)
+        
+      
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -89,7 +78,8 @@ class MapViewController: UIViewController {
         switch type {
             case .message(let name):
                 title = "Selecionamos um local para você!"
-                message = "Toque no local desejado e siga sua rota para chegar lá."
+                message = ""
+                let _ = name
         }
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Prosseguir", style: .cancel, handler: nil)
@@ -107,3 +97,7 @@ class MapViewController: UIViewController {
         
     }
 }
+
+
+
+
