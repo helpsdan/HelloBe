@@ -409,16 +409,104 @@
             <objects>
                 <viewController id="tHK-UM-8Zb" customClass="ProfileViewController" customModule="HelloBe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dwX-xP-E6R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1451"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pb8-LW-7iD">
+                                <rect key="frame" x="0.0" y="116" width="375" height="1335"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOU-39-ylo">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1335"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frutas" translatesAutoresizingMaskIntoConstraints="NO" id="rPQ-aC-qV8">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="woman" translatesAutoresizingMaskIntoConstraints="NO" id="hKA-p5-b6D">
+                                                <rect key="frame" x="86" y="70" width="203" height="141"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Julia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptp-eC-6WB">
+                                                <rect key="frame" x="156" y="209" width="62" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cavalcanti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0r-b6-jGY">
+                                                <rect key="frame" x="135" y="239" width="105" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="euT-r4-4Vr">
+                                                <rect key="frame" x="33" y="272" width="308" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ5-Pf-ggJ">
+                                                <rect key="frame" x="162" y="270" width="51" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="restaurant"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amigos que estão mudando:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fJ-OD-9pq">
+                                                <rect key="frame" x="13" y="536" width="260" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bma-kh-g4g">
+                                                <rect key="frame" x="129" y="291" width="51" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="smartphone"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWA-SU-Cof">
+                                                <rect key="frame" x="33" y="221" width="46" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="friends"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkS-ah-gA8">
+                                                <rect key="frame" x="295" y="221" width="46" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="chat2"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kx-Nq-RIC">
+                                                <rect key="frame" x="196" y="291" width="51" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="beer"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.41025188513045713" green="0.75913219659093512" blue="0.9186349152658031" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="TSg-G6-ad6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HOU-39-ylo" secondAttribute="bottom" id="4jm-Ox-eEY"/>
+                                    <constraint firstAttribute="trailing" secondItem="HOU-39-ylo" secondAttribute="trailing" id="979-Vd-zaz"/>
+                                    <constraint firstAttribute="bottom" secondItem="HOU-39-ylo" secondAttribute="bottom" id="FTK-Pc-CQh"/>
+                                    <constraint firstItem="HOU-39-ylo" firstAttribute="leading" secondItem="pb8-LW-7iD" secondAttribute="leading" id="Jwd-lW-swR"/>
+                                    <constraint firstItem="HOU-39-ylo" firstAttribute="top" secondItem="pb8-LW-7iD" secondAttribute="top" id="mLa-tf-voW"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99403317779345668" blue="0.98943491679972995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pb8-LW-7iD" firstAttribute="trailing" secondItem="LqN-0W-8Vl" secondAttribute="trailing" id="3iT-Dc-eZt"/>
+                            <constraint firstItem="pb8-LW-7iD" firstAttribute="top" secondItem="LqN-0W-8Vl" secondAttribute="top" id="H0M-Md-15D"/>
+                            <constraint firstItem="HOU-39-ylo" firstAttribute="width" secondItem="dwX-xP-E6R" secondAttribute="width" id="S37-ep-yuQ"/>
+                            <constraint firstItem="pb8-LW-7iD" firstAttribute="bottom" secondItem="LqN-0W-8Vl" secondAttribute="bottom" id="Ywl-WA-nkE"/>
+                            <constraint firstItem="pb8-LW-7iD" firstAttribute="leading" secondItem="LqN-0W-8Vl" secondAttribute="leading" id="qUc-GE-lQD"/>
+                            <constraint firstItem="HOU-39-ylo" firstAttribute="width" secondItem="dwX-xP-E6R" secondAttribute="width" id="teW-yO-eRE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LqN-0W-8Vl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="IP0-3c-jtA"/>
+                    <size key="freeformSize" width="375" height="1500"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Clf-lA-G5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4287.1999999999998" y="1683.5082458770617"/>
+            <point key="canvasLocation" x="-4375.1999999999998" y="2078.8605697151424"/>
         </scene>
         <!--Chat-->
         <scene sceneID="5EF-0b-7M3">
@@ -564,17 +652,21 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhV-sV-PMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4286" y="842"/>
+            <point key="canvasLocation" x="-4433" y="766"/>
         </scene>
     </scenes>
     <resources>
         <image name="I" width="16" height="16"/>
         <image name="Logo_HelloBe" width="1920" height="1080"/>
+        <image name="bar" width="256" height="256"/>
         <image name="beer" width="512" height="512"/>
         <image name="cancel" width="30" height="30"/>
         <image name="chat" width="36" height="36"/>
+        <image name="chat2" width="256" height="256"/>
         <image name="drugs" width="512" height="512"/>
         <image name="facebook" width="256" height="256"/>
+        <image name="friends" width="512" height="512"/>
+        <image name="frutas" width="1502" height="594"/>
         <image name="fundo" width="1000" height="1742"/>
         <image name="google" width="256" height="256"/>
         <image name="habit" width="36" height="36"/>
@@ -586,6 +678,7 @@
         <image name="settings" width="36" height="36"/>
         <image name="smartphone" width="512" height="512"/>
         <image name="smoking" width="512" height="512"/>
+        <image name="woman" width="540" height="374"/>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
