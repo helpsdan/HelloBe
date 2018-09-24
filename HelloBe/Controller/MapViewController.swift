@@ -18,13 +18,14 @@ class MapViewController: UIViewController {
     var place: Place!
     @IBOutlet weak var mapView: MKMapView!
     var num: Int = 0
-    let locations = ["MASP",
-                     "Shopping Pátio Paulista",
-                     "Shopping Eldorado",
-                     "Livraria",
-                     "Sorveteria",
-                     "Shopping",
-                     "Restaurante"]
+    let locations = ["Av. Paulista, 1578 ",
+                     "R. da Consolação, 94",
+                     "R. Treze de Maio, 1947",
+                     "R. Frei Caneca, 569",
+                     "R. Brg. Jordão, 149",
+                     "R. Apeninos, 118",
+                     "Praça da Luz, 2",
+                     "Av. Europa, 158"]
     var locationManage = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,20 +70,41 @@ class MapViewController: UIViewController {
         }else if num == 5{
             num += 1
         }else if num == 6{
+            num += 1
+        }else if num == 7{
             num = 0
         }
     }
 
     func showMessage(type: PlaceMessage){
-        let title: String, message: String
+        let title: String
+        var message: String
         switch type {
             case .message(let name):
-                title = "We've selected a location for you!"
+                title = "Selecionamos um local para você!"
                 message = ""
+                if num == 0{
+                    message += "MASP"
+                }else if num == 1{
+                    message += "Biblioteca Mario de Andrade"
+                }else if num == 2{
+                    message += "Shopping Pátio Paulista"
+                }else if num == 3{
+                    message += "Teatro Shopping Frei Caneca"
+                }else if num == 4{
+                    message += "Museu do Ipiranga"
+                }else if num == 5{
+                    message += "Teatro Santo Agostinho"
+                }else if num == 6{
+                    message += "Pinacoteca do Estado de São Paulo"
+                }else if num == 7{
+                    message += "Museu da Imagem e do Som"
+                }
+                
                 let _ = name
         }
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "Proceed", style: .cancel, handler: nil)
+        let okButton = UIAlertAction(title: "Prosseguir", style: .cancel, handler: nil)
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil )
     }
