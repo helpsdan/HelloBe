@@ -77,12 +77,12 @@ class MapViewController: UIViewController {
         let title: String, message: String
         switch type {
             case .message(let name):
-                title = "Selecionamos um local para você!"
+                title = "We've selected a location for you!"
                 message = ""
                 let _ = name
         }
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "Prosseguir", style: .cancel, handler: nil)
+        let okButton = UIAlertAction(title: "Proceed", style: .cancel, handler: nil)
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil )
     }

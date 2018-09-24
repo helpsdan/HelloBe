@@ -11,9 +11,10 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var imagemTest: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(imagemTest.frame.size.width/2)//image.frame.size.width/2
         // Do any additional setup after loading the view.
     }
 
