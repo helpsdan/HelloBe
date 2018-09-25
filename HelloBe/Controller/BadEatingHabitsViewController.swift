@@ -9,16 +9,16 @@
 import UIKit
 
 class BadEatingHabitsViewController: UIViewController {
-
+    
     @IBOutlet weak var swFastFood: UISwitch!
     @IBOutlet weak var swFriedFood: UISwitch!
     @IBOutlet weak var swSalads: UISwitch!
     @IBOutlet weak var swTime: UISwitch!
     @IBOutlet weak var swFuits: UISwitch!
     @IBOutlet weak var swNutri: UISwitch!
-override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func btSend(_ sender: UIButton){
@@ -28,7 +28,7 @@ override func viewDidLoad() {
     func save(){
         
     }
-
+    
     
     
     @IBAction func close(_ sender: UIButton) {

@@ -1,0 +1,9 @@
+{
+  "commitish" : "2.3.5",
+  "iOS" : [
+    {
+      "name" : "BMSCore",
+      "hash" : "5dd2aabbbb09dcf79a3fb622b3cc2833fea46b63dd175d3310e91cb2ff80f767"
+    }
+  ]
+}

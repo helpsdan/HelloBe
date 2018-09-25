@@ -1,0 +1,5 @@
+# Use a project from GitHub Enterprise
+github "watson-developer-cloud/swift-sdk" == 0.32.0
+ github "MessageKit/MessageKit"
+ github "ninjaprox/NVActivityIndicatorView"
+ github "ibm-bluemix-mobile-services/bms-clientsdk-swift-core"

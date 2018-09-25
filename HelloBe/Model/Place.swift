@@ -2,10 +2,9 @@
 //  Place.swift
 //  HelloBe
 //
-//  Created by Daniel Aguiar on 20/9/18.
-//  Copyright © 2018 Daniel Aguiar. All rights reserved.
+//  Created by Daniel Aguiar on 25/9/18.
+//  Copyright © 2018 IBM. All rights reserved.
 //
-
 import Foundation
 import MapKit
 

@@ -1,0 +1,6 @@
+github "MessageKit/MessageKit" "1.0.0"
+github "daltoniam/Starscream" "3.0.5"
+github "ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics-api" "2.2.3"
+github "ibm-bluemix-mobile-services/bms-clientsdk-swift-core" "2.3.5"
+github "ninjaprox/NVActivityIndicatorView" "4.4.0"
+github "watson-developer-cloud/swift-sdk" "v0.32.0"

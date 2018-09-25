@@ -1,0 +1,9 @@
+{
+  "commitish" : "2.2.3",
+  "iOS" : [
+    {
+      "name" : "BMSAnalyticsAPI",
+      "hash" : "9549021c2663799821ec6794f7d6263f8393a157c5e102e241607726fe17992d"
+    }
+  ]
+}
