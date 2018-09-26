@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TOm-fA-GLF">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="TOm-fA-GLF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fOF-VH-kx8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fundo" translatesAutoresizingMaskIntoConstraints="NO" id="jSd-gO-m0Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-7" width="375" height="819"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_HelloBe_final" translatesAutoresizingMaskIntoConstraints="NO" id="nJv-Kh-1cn">
-                                <rect key="frame" x="-95" y="183" width="565" height="301"/>
+                                <rect key="frame" x="-95" y="256" width="565" height="301"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -30,15 +30,15 @@
                         <constraints>
                             <constraint firstItem="Ohb-fa-q1c" firstAttribute="trailing" secondItem="jSd-gO-m0Z" secondAttribute="trailing" id="2az-nU-wu3"/>
                             <constraint firstItem="jSd-gO-m0Z" firstAttribute="leading" secondItem="Ohb-fa-q1c" secondAttribute="leading" id="CQz-2l-Oan"/>
-                            <constraint firstItem="Ohb-fa-q1c" firstAttribute="bottom" secondItem="jSd-gO-m0Z" secondAttribute="bottom" id="mQv-GT-9M4"/>
-                            <constraint firstItem="jSd-gO-m0Z" firstAttribute="top" secondItem="Ohb-fa-q1c" secondAttribute="top" constant="-20" id="xd2-wV-zlG"/>
+                            <constraint firstItem="Ohb-fa-q1c" firstAttribute="bottom" secondItem="jSd-gO-m0Z" secondAttribute="bottom" constant="-34" id="mQv-GT-9M4"/>
+                            <constraint firstItem="jSd-gO-m0Z" firstAttribute="top" secondItem="Ohb-fa-q1c" secondAttribute="top" constant="-51" id="xd2-wV-zlG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ohb-fa-q1c"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kef-OY-umI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="50.824587706146929"/>
+            <point key="canvasLocation" x="21.600000000000001" y="50.246305418719217"/>
         </scene>
     </scenes>
     <resources>

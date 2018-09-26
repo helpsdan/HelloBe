@@ -14,6 +14,8 @@
 		37C2C990215A04B8007D482C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2C98F215A04B8007D482C /* MapViewController.swift */; };
 		37C2C992215A04D3007D482C /* BadEatingHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2C991215A04D3007D482C /* BadEatingHabitsViewController.swift */; };
 		37C2C994215A04EE007D482C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2C993215A04EE007D482C /* Place.swift */; };
+		37C691EE215AC00500013FC9 /* Hellobe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37C691EC215AC00500013FC9 /* Hellobe.xcdatamodeld */; };
+		37FA11F5215ACDF70067512B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA11F4215ACDF70067512B /* LoginViewController.swift */; };
 		555C91AC1D0F0731003E84E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C91AB1D0F0731003E84E3 /* AppDelegate.swift */; };
 		555C91AE1D0F0731003E84E3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C91AD1D0F0731003E84E3 /* ChatViewController.swift */; };
 		555C91B11D0F0731003E84E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555C91AF1D0F0731003E84E3 /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		37C2C98F215A04B8007D482C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		37C2C991215A04D3007D482C /* BadEatingHabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadEatingHabitsViewController.swift; sourceTree = "<group>"; };
 		37C2C993215A04EE007D482C /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		37C691ED215AC00500013FC9 /* Hellobe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hellobe.xcdatamodel; sourceTree = "<group>"; };
+		37FA11F4215ACDF70067512B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		40C440CD45E797A604FD27B8 /* Pods-HelloBe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloBe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloBe/Pods-HelloBe.release.xcconfig"; sourceTree = "<group>"; };
 		555C91A81D0F0731003E84E3 /* HelloBe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloBe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555C91AB1D0F0731003E84E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				E3D862A0202B8ECC00B34DE6 /* AssistantError.swift */,
 				587777151FF8759400387021 /* AssistantMessages.swift */,
 				37C2C98F215A04B8007D482C /* MapViewController.swift */,
+				37FA11F4215ACDF70067512B /* LoginViewController.swift */,
 				37C2C991215A04D3007D482C /* BadEatingHabitsViewController.swift */,
 				5877770A1FF8402B00387021 /* training */,
 			);
@@ -206,6 +211,7 @@
 		555C91AA1D0F0731003E84E3 /* HelloBe */ = {
 			isa = PBXGroup;
 			children = (
+				37C691EC215AC00500013FC9 /* Hellobe.xcdatamodeld */,
 				37C2C98C215A0314007D482C /* Controller */,
 				37C2C98B215A030F007D482C /* View */,
 				37C2C98A215A030A007D482C /* Model */,
@@ -486,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37FA11F5215ACDF70067512B /* LoginViewController.swift in Sources */,
 				E3D862A1202B8ECC00B34DE6 /* AssistantError.swift in Sources */,
 				37C2C992215A04D3007D482C /* BadEatingHabitsViewController.swift in Sources */,
 				555C91AE1D0F0731003E84E3 /* ChatViewController.swift in Sources */,
@@ -493,6 +500,7 @@
 				37C2C990215A04B8007D482C /* MapViewController.swift in Sources */,
 				37C2C994215A04EE007D482C /* Place.swift in Sources */,
 				587777161FF8759500387021 /* AssistantMessages.swift in Sources */,
+				37C691EE215AC00500013FC9 /* Hellobe.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,6 +781,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		37C691EC215AC00500013FC9 /* Hellobe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				37C691ED215AC00500013FC9 /* Hellobe.xcdatamodel */,
+			);
+			currentVersion = 37C691ED215AC00500013FC9 /* Hellobe.xcdatamodel */;
+			path = Hellobe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 555C91A01D0F0731003E84E3 /* Project object */;
 }

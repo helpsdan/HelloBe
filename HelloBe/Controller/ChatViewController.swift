@@ -24,6 +24,9 @@ import BMSCore
 class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
     
     fileprivate let kCollectionViewCellHeight: CGFloat = 12.5
+    @IBAction func voltar(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     // Messages State
     var messageList: [AssistantMessages] = []
@@ -38,10 +41,9 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
     var workspaceID: String?
     
     // Users
-    var current = Sender(id: "123456", displayName: "Ginni")
+    var current = Sender(id: "123456", displayName: "Josh")
     let watson = Sender(id: "654321", displayName: "Watson")
-    
-    
+
     
     // UIButton to initiate login
     @IBOutlet weak var logoutButton: UIButton!
@@ -65,10 +67,6 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
                                                name: .UIApplicationDidBecomeActive,
                                                object: nil)
         
-        
-        
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,7 +79,6 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
     }
     
     @objc func didBecomeActive(_ notification: Notification) {
-        
         
     }
     
@@ -103,7 +100,7 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
         }
         
         // API Version Date to initialize the Assistant API
-        let date = "2018-02-01"
+        let date = "2018-09-25"
         
         // Set the Watson credentials for Assistant service from the BMSCredentials.plist
         // If using IAM authentication
@@ -149,10 +146,10 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
             retrieveFirstMessage()
             
         } else {
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
-                NVActivityIndicatorPresenter.sharedInstance.setMessage("Checking for Training...")
-            }
+            /*
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
+                NVActivityIndicatorPresenter.sharedInstance.setMessage("Loading ...")
+            }*/
             
             // Retrieve a list of Workspaces that have been trained and default to the first one
             // You can define your own WorkspaceID if you have a specific Assistant model you want to work with
@@ -196,7 +193,7 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
     
     // Method to set up the activity progress indicator view
     func instantiateActivityIndicator() {
-        let size: CGFloat = 50
+        let size: CGFloat = 250
         let x = self.view.frame.width/2 - size
         let y = self.view.frame.height/2 - size
         
@@ -216,7 +213,7 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
         messageInputBar.delegate = self
         
         // Configure views
-        messageInputBar.sendButton.tintColor = UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1)
+        messageInputBar.sendButton.tintColor = UIColor(red:0.00, green:0.70, blue:0.84, alpha:1.0)
         scrollsToBottomOnKeybordBeginsEditing = true // default false
         maintainPositionOnKeyboardFrameChanged = true // default false
     }
@@ -253,8 +250,8 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
                     let date = self.dateAddingRandomTime()
                     
                     let attributedText = NSAttributedString(string: watsonMessage,
-                                                            attributes: [.font: UIFont.systemFont(ofSize: 14),
-                                                                         .foregroundColor: UIColor.blue])
+                                                            attributes: [.font: UIFont.systemFont(ofSize: 16),
+                                                                         .foregroundColor: UIColor(red:0.00, green:0.70, blue:0.84, alpha:1.0)])
                     
                     // Create a Message for adding to the Message View
                     let message = AssistantMessages(attributedText: attributedText, sender: self.watson, messageId: uniqueID, date: date)
@@ -262,7 +259,7 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
                     // Add the response to the Message View
                     self.messageList.insert(message, at: 0)
                     self.messagesCollectionView.reloadData()
-                    self.messagesCollectionView.scrollToBottom()
+                    //self.messagesCollectionView.scrollToBottom()
                     self.stopAnimating()
                 }
             }
@@ -300,7 +297,7 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
                                               message: error.alertMessage,
                                               preferredStyle: .alert)
                 // Add an action to the alert
-                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Sair", style: UIAlertActionStyle.default, handler: nil))
                 // Show the alert
                 self.present(alert, animated: true, completion: nil)
             }
@@ -311,9 +308,9 @@ class ChatViewController: MessagesViewController, NVActivityIndicatorViewable {
     func getAvatarFor(sender: Sender) -> Avatar {
         switch sender {
         case current:
-            return Avatar(image: UIImage(named: "avatar_small"), initials: "GR")
+            return Avatar(image: UIImage(named: "boy2"), initials: "GR")
         case watson:
-            return Avatar(image: UIImage(named: "watson_avatar"), initials: "WAT")
+            return Avatar(image: UIImage(named: "robo"), initials: "WAT")
         default:
             return Avatar()
         }
@@ -364,9 +361,8 @@ extension ChatViewController: MessagesDataSource {
 extension ChatViewController: MessagesDisplayDelegate {
     
     // MARK: - Text Messages
-    
     func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .white : .darkText
+        return isFromCurrentSender(message: message) ? .white : UIColor(red:0.00, green:0.70, blue:0.84, alpha:1.0)
     }
     
     func detectorAttributes(for detector: DetectorType, and message: MessageType, at indexPath: IndexPath) -> [NSAttributedStringKey : Any] {
@@ -380,7 +376,7 @@ extension ChatViewController: MessagesDisplayDelegate {
     // MARK: - All Messages
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1) : UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        return isFromCurrentSender(message: message) ? UIColor(red:0.00, green:0.70, blue:0.84, alpha:1.0) : UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
     }
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
@@ -527,7 +523,7 @@ extension ChatViewController: MessageInputBarDelegate {
             return
         }
         
-        let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.blue])
+        let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.white])
         let id = UUID().uuidString
         let message = AssistantMessages(attributedText: attributedText, sender: currentSender(), messageId: id, date: Date())
         messageList.append(message)
@@ -555,13 +551,13 @@ extension ChatViewController: MessageInputBarDelegate {
                 self.context = response.context
                 DispatchQueue.main.async {
                     
-                    let attributedText = NSAttributedString(string: watsonMessage, attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.blue])
+                    let attributedText = NSAttributedString(string: watsonMessage, attributes: [.font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor(red:0.00, green:0.70, blue:0.84, alpha:1.0)])
                     let id = UUID().uuidString
                     let message = AssistantMessages(attributedText: attributedText, sender: self.watson, messageId: id, date: Date())
                     self.messageList.append(message)
                     inputBar.inputTextView.text = String()
                     self.messagesCollectionView.insertSections([self.messageList.count - 1])
-                    self.messagesCollectionView.scrollToBottom()
+                    self.messagesCollectionView.scrollToBottom(animated: true)
                     
                 }
                 
