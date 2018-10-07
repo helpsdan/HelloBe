@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import AVKit
 
 class LoginViewController: UIViewController {
 
@@ -22,6 +23,19 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func previewVideo(_ sender: UIButton) {
+        if let path = Bundle.main.path(forResource: "video", ofType: "mp4"){
+            let video = AVPlayer(url: URL(fileURLWithPath: path))
+            let videoPlayer = AVPlayerViewController()
+            videoPlayer.player = video
+            
+            present(videoPlayer, animated: true, completion:{
+                video.play()
+            })
+        }
+    }
+    
+    
     @IBAction func Login(_ sender: UIButton) {
         if valida() != false{
             dismiss(animated: true, completion: nil)

@@ -11,6 +11,10 @@ import MapKit
 import CoreLocation
 class MapViewController: UIViewController {
     
+    
+    @IBAction func close(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     enum PlaceMessage{
         case message(String)
     }
