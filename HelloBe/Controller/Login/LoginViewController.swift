@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func previewVideo(_ sender: UIButton) {
-        if let path = Bundle.main.path(forResource: "video", ofType: "mp4"){
+        if let path = Bundle.main.path(forResource: "video1", ofType: "mp4"){
             let video = AVPlayer(url: URL(fileURLWithPath: path))
             let videoPlayer = AVPlayerViewController()
             videoPlayer.player = video
